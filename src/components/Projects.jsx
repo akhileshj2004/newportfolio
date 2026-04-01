@@ -2,6 +2,15 @@ import React from 'react';
 import { ExternalLink, Code, Server, Cpu, Layers, Database, Users, Network, Brain, Shield, ShoppingCart, GraduationCap, Stethoscope, BookOpen, Wifi, Activity, Lock, Camera } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import Tilt from 'react-parallax-tilt';
+import { motion } from 'framer-motion';
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  visible: (i) => ({
+    opacity: 1, y: 0, scale: 1,
+    transition: { delay: i * 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
 
 const highlightedProjects = [
   {
@@ -106,25 +115,39 @@ const additionalProjects = [
 const Projects = () => {
   return (
     <section className="py-16 space-y-12" id="projects">
-      <div className="flex items-center gap-4">
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.6 }}
+        className="flex items-center gap-4"
+      >
         <Code className="text-electric-blue w-10 h-10" />
         <h2 className="text-4xl text-white font-mono">
           [Data Nodes] <span className="text-electric-blue text-2xl font-sans tracking-tight">/ Projects</span>
         </h2>
-      </div>
+      </motion.div>
 
       {/* Highlighted Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
         {highlightedProjects.map((proj, idx) => (
+          <motion.div
+            key={idx}
+            custom={idx}
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            className={idx === 0 ? 'md:col-span-2 xl:col-span-2' : ''}
+          >
           <Tilt 
-             key={idx} 
              tiltMaxAngleX={8} 
              tiltMaxAngleY={8} 
              glareEnable={true} 
              glareMaxOpacity={0.15}
              glareColor="#00FF41"
              glarePosition="all"
-             className={`h-full ${idx === 0 ? 'md:col-span-2 xl:col-span-2' : ''}`}
+             className="h-full"
            >
             <div className={`glass-panel p-6 h-full flex flex-col group neon-glow bg-dark-charcoal hover:bg-obsidian transition-colors duration-500 relative ${idx === 0 ? 'border-l-4 border-l-cyber-lime/60' : ''}`}>
               {/* Top accent bar */}
@@ -170,6 +193,7 @@ const Projects = () => {
               </div>
             </div>
           </Tilt>
+          </motion.div>
         ))}
       </div>
 

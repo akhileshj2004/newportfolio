@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Award, Trophy, Star, ChevronDown, ChevronUp, Mic, Globe, Users, Code2, Camera, BookOpen, Cpu } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const leadership = [
   "Google Student Ambassador (2025)",
@@ -77,14 +78,26 @@ const Achievements = () => {
 
   return (
     <section className="py-16 space-y-12" id="achievements">
-      <div className="flex items-center gap-4">
+      <motion.div
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.6 }}
+        className="flex items-center gap-4"
+      >
         <Trophy className="text-yellow-400 w-10 h-10" />
         <h2 className="text-4xl text-white font-mono">
           [Milestones.log]
         </h2>
-      </div>
+      </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.7, delay: 0.1 }}
+        className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+      >
         <div className="space-y-6">
           <div className="glass-panel p-6 h-full bg-obsidian border-l-4 border-l-yellow-400 group">
             <h3 className="text-xl font-mono text-yellow-400 mb-6 flex items-center gap-2">
@@ -126,10 +139,16 @@ const Achievements = () => {
             </ul>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Expandable: Certs + Extracurriculars */}
-      <div className="pt-6 border-t border-white/10">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="pt-6 border-t border-white/10"
+      >
         <button
           onClick={() => setShowExtras(!showExtras)}
           className="flex items-center gap-2 text-cyber-lime font-mono mx-auto hover:text-white transition-colors py-2 px-6 rounded-md border border-cyber-lime/30 hover:bg-cyber-lime/10"
@@ -229,7 +248,7 @@ const Achievements = () => {
 
           </div>
         )}
-      </div>
+      </motion.div>
     </section>
   );
 };
