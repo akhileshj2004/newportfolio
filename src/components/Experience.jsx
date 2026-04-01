@@ -1,0 +1,117 @@
+import React from 'react';
+import { Network, Database, BrainCircuit, Activity, Lock, FlaskConical, LayoutGrid } from 'lucide-react';
+import Tilt from 'react-parallax-tilt';
+
+const publications = [
+  {
+    title: "A Holistic Approach to Diabetes Management: Integrating Sentiment Analysis with Clinical and Behavioral Data",
+    authorship: "First Author",
+    venue: "SMARTCOM 2026, to be published in Springer LNNS",
+    icon: <Activity className="w-8 h-8 text-cyber-lime" />
+  },
+  {
+    title: "RBI Compliance Assistant",
+    authorship: "Corresponding Author",
+    venue: "IJCACI 2025, to be published in Springer LNNS",
+    icon: <Database className="w-8 h-8 text-electric-blue" />
+  },
+  {
+    title: "Classification of Watermelons based on Ripeness using Multimodal Data",
+    authorship: "First Author",
+    venue: "ITAI 2025, published in Springer LNNS",
+    icon: <BrainCircuit className="w-8 h-8 text-purple-400" />
+  },
+  {
+    title: "Exploratory Data Analytics of COVID-19 Vaccination Drive in India",
+    authorship: "Corresponding Author",
+    venue: "IEEE Xplore (10847026), 2024",
+    icon: <Network className="w-8 h-8 text-yellow-400" />
+  },
+  {
+    title: "Zynq Optimized EEG Artifact Removal for Sleep Monitoring",
+    authorship: "First Author",
+    venue: "FTNCT’08 2025, to be published in Elsevier Journal",
+    icon: <Activity className="w-8 h-8 text-pink-400" />
+  },
+  {
+    title: "Dynamic Avatar Generation Framework",
+    authorship: "First Author",
+    venue: "In progress – to be submitted to ACM Transactions on Computing for Healthcare",
+    icon: <LayoutGrid className="w-8 h-8 text-cyan-400" />
+  },
+  {
+    title: "DeepDeflect: A Novel Dockerized Framework for Real‑Time DDoS Mitigation",
+    authorship: "First Author",
+    venue: "In progress",
+    icon: <Lock className="w-8 h-8 text-red-400" />
+  }
+];
+
+const Experience = () => {
+  return (
+    <section className="py-20 flex flex-col gap-12" id="experience">
+      <div className="flex items-center gap-4 mb-8">
+        <FlaskConical className="text-cyber-lime w-10 h-10" />
+        <h2 className="text-4xl">
+          [<span className="text-white">Experience & Research</span>]
+        </h2>
+      </div>
+
+      <div className="glass-panel p-8 relative overflow-hidden group">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-cyber-lime/10 blur-[50px] pointer-events-none group-hover:bg-cyber-lime/20 transition-colors duration-500"></div>
+        <div className="flex items-start gap-4 flex-col md:flex-row justify-between">
+          <div className="space-y-4 relative z-10 w-full">
+            <div className="flex items-center justify-between border-b border-white/10 pb-4">
+              <div>
+                <h3 className="text-2xl font-mono text-cyber-lime glitch-hover inline-block">AI Intern</h3>
+                <p className="text-electric-blue text-lg font-sans">IIIT Dharwad</p>
+              </div>
+              <span className="text-gray-500 font-mono text-sm border border-gray-700 px-3 py-1 rounded-full bg-dark-charcoal">Jan 2026 – Present</span>
+            </div>
+            <p className="text-gray-300 font-sans leading-relaxed text-lg pt-2 md:max-w-3xl">
+              Developing a <span className="text-white font-semibold">Retrieval‑Augmented Generation (RAG)</span> pipeline to enhance LLM responses using local knowledge bases. Integrating localized embeddings and semantic search vectors to significantly improve the accuracy and context-awareness of the pipeline over unstructured data sources.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-8 space-y-6">
+        <h3 className="text-2xl font-mono text-gray-400 border-l-2 border-electric-blue pl-4 mb-8">
+          Research Publications // <span className="text-electric-blue">Data Deck</span>
+        </h3>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {publications.map((pub, idx) => (
+            <Tilt 
+              key={idx} 
+              tiltMaxAngleX={10} 
+              tiltMaxAngleY={10} 
+              glareEnable={true} 
+              glareMaxOpacity={0.1}
+              scale={1.02}
+              className="h-full"
+            >
+              <div className="glass-panel p-6 h-full flex flex-col gap-4 border-t-2 border-t-white/5 relative group hover:border-t-cyber-lime/50 transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 z-0"></div>
+                <div className="relative z-10 flex justify-between items-start">
+                  {pub.icon}
+                  <span className="text-xs font-mono px-2 py-1 bg-obsidian border border-gray-700 rounded-md text-gray-400 opacity-80 group-hover:opacity-100 transition-opacity">
+                    {pub.authorship}
+                  </span>
+                </div>
+                <h4 className="relative z-10 text-white font-mono text-lg flex-1 mt-2">
+                  {pub.title}
+                </h4>
+                <div className="relative z-10 text-sm font-sans text-electric-blue pt-4 border-t border-white/10 mt-auto">
+                  {pub.venue}
+                </div>
+              </div>
+            </Tilt>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Experience;
