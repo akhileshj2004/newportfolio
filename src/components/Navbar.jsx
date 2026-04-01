@@ -68,16 +68,18 @@ const Navbar = () => {
               {isActive && (
                 <motion.div
                   layoutId="navIndicator"
-                  className="absolute -right-2 w-0.5 h-5 bg-cyber-lime rounded-full shadow-[0_0_8px_rgba(0,255,65,0.6)]"
+                  className="absolute -right-2 w-0.5 h-6 bg-cyber-lime rounded-full shadow-[0_0_12px_rgba(0,255,65,0.8)] flex items-center justify-center"
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                />
+                >
+                  <div className="absolute w-2 h-2 rounded-full bg-cyber-lime animate-ping-slow"></div>
+                </motion.div>
               )}
 
               {link.icon}
 
               {/* Tooltip */}
               <span className="absolute right-14 px-3 py-1.5 text-xs font-mono text-white bg-obsidian/90 backdrop-blur-md border border-white/10 rounded-lg opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-200 whitespace-nowrap shadow-xl translate-x-2 group-hover:translate-x-0">
-                {link.label}
+                <span className="bracket-hover tracking-wider">{link.label}</span>
                 <span className="absolute top-1/2 -translate-y-1/2 -right-1 w-2 h-2 bg-obsidian/90 border-r border-t border-white/10 rotate-45" />
               </span>
             </a>

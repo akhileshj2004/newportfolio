@@ -7,12 +7,15 @@ const Footer = () => {
     <footer className="w-full bg-obsidian py-12 border-t border-white/10 mt-24 relative overflow-hidden" id="contact">
       <div className="absolute top-0 right-[20%] w-96 h-96 bg-electric-blue/5 blur-[100px] pointer-events-none"></div>
       
+      {/* Matrix data stream background */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(0, 255, 65, 0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 65, 0.4) 1px, transparent 1px)', backgroundSize: '20px 20px', animation: 'dataStreamY 20s linear infinite' }}></div>
+      
       <div className="container mx-auto px-6 max-w-7xl flex flex-col md:flex-row justify-between items-center gap-8 relative z-10">
         
         <div className="space-y-4 text-center md:text-left">
           <div className="flex items-center gap-2 justify-center md:justify-start font-mono text-xl text-white">
-            <Terminal className="text-cyber-lime w-6 h-6" />
-            <span>AKHILESH_JOSHI</span>
+            <Terminal className="text-cyber-lime w-6 h-6 animate-pulse" />
+            <span className="glitch-text" data-text="AKHILESH_JOSHI">AKHILESH_JOSHI</span>
           </div>
           <p className="text-gray-500 font-sans text-sm max-w-sm">
             Computer Science Engineer | AI/ML & DevOps Specialist | Software Developer.

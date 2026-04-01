@@ -53,9 +53,9 @@ const Hero = () => {
             <span>SYSTEM.ONLINE()</span>
           </motion.div>
 
-          <motion.h1 {...fadeUp(0.35)} className="text-5xl md:text-7xl font-mono font-bold tracking-tighter text-white">
-            <span className="text-glow-lime glow-text block mb-2 glitch-hover">AKHILESH</span>
-            <span className="text-glow-blue glow-text block glitch-hover">JOSHI</span>
+          <motion.h1 {...fadeUp(0.35)} className="text-5xl md:text-7xl font-mono font-bold tracking-tighter text-white flex flex-wrap gap-x-6 gap-y-2">
+            <span className="text-glow-lime glow-text glitch-hover glitch-text" data-text="AKHILESH">AKHILESH</span>
+            <span className="text-glow-blue glow-text glitch-hover glitch-text" data-text="JOSHI">JOSHI</span>
           </motion.h1>
 
           <motion.p {...fadeUp(0.5)} className="text-xl md:text-2xl text-gray-400 font-sans max-w-lg leading-relaxed">
@@ -87,7 +87,7 @@ const Hero = () => {
               className="flex items-center gap-2 bg-obsidian border border-white/20 hover:border-cyber-lime text-white px-6 py-3 rounded-lg font-mono text-sm transition-all duration-300 neon-glow group hover:scale-105"
             >
               <FaGithub size={18} className="group-hover:text-cyber-lime transition-colors" />
-              <span>[Access Repository]</span>
+              <span className="bracket-hover">Access Repository</span>
             </a>
 
             <a
@@ -97,7 +97,7 @@ const Hero = () => {
               className="flex items-center gap-2 bg-electric-blue/10 border border-electric-blue/30 hover:bg-electric-blue/20 text-electric-blue px-6 py-3 rounded-lg font-mono text-sm transition-all duration-300 neon-glow-blue hover:scale-105"
             >
               <FaLinkedin size={18} />
-              <span>[Link Intelligence]</span>
+              <span className="bracket-hover">Link Intelligence</span>
             </a>
 
             <a
@@ -105,7 +105,7 @@ const Hero = () => {
               className="flex items-center gap-2 bg-cyber-lime/10 border border-cyber-lime/30 hover:bg-cyber-lime/20 text-cyber-lime px-6 py-3 rounded-lg font-mono text-sm transition-all duration-300 neon-glow hover:scale-105"
             >
               <Download size={18} />
-              <span>[Download Resume]</span>
+              <span className="bracket-hover">Download Resume</span>
             </a>
           </motion.div>
         </div>
@@ -118,12 +118,24 @@ const Hero = () => {
           className="flex-1 w-full max-w-sm ml-auto hidden md:block"
         >
           <div className="relative aspect-square w-full filter drop-shadow-[0_0_30px_rgba(0,180,255,0.2)]">
-            <div className="absolute inset-0 border-2 border-electric-blue/30 rounded-full animate-[spin_15s_linear_infinite]" style={{ borderStyle: 'dashed' }}></div>
+            {/* Radar Sweep Ring */}
+            <div className="absolute inset-0 rounded-full border border-electric-blue/20 overflow-hidden">
+               <div className="absolute w-1/2 h-1/2 bottom-1/2 right-1/2 origin-bottom-right bg-gradient-to-tr from-electric-blue/0 via-electric-blue/10 to-electric-blue/40 animate-[spin_4s_linear_infinite]" />
+            </div>
+            
+            <div className="absolute inset-0 border-[3px] border-electric-blue/30 rounded-full animate-[spin_15s_linear_infinite] border-dashed"></div>
             <div className="absolute inset-4 border-2 border-cyber-lime/20 rounded-full animate-[spin_20s_linear_infinite_reverse]"></div>
-            <div className="absolute inset-12 bg-obsidian rounded-full border border-white/10 flex items-center justify-center overflow-hidden z-10 glass-panel shadow-[inset_0_0_40px_rgba(0,0,0,0.8)] hover:border-cyber-lime/50 transition-colors duration-500">
-               <div className="text-center font-mono opacity-50 flex flex-col items-center">
+            
+            {/* Scanning line across the circle */}
+            <div className="absolute inset-8 rounded-full overflow-hidden border border-cyber-lime/10">
+              <div className="absolute top-0 w-full h-[2px] bg-cyber-lime/40 shadow-[0_0_10px_rgba(0,255,65,1)] animate-[float_3s_ease-in-out_infinite]" />
+            </div>
+
+            <div className="absolute inset-12 bg-obsidian rounded-full border border-white/10 flex items-center justify-center z-10 glass-panel shadow-[inset_0_0_40px_rgba(0,0,0,0.8)] hover:border-cyber-lime/50 transition-colors duration-500 overflow-hidden group">
+               <div className="absolute inset-0 bg-[radial-gradient(rgba(0,255,65,0.1)_1px,transparent_1px)] bg-[length:10px_10px] opacity-20" />
+               <div className="text-center font-mono opacity-50 flex flex-col items-center group-hover:opacity-100 transition-opacity">
                  <Terminal className="w-12 h-12 mb-2 text-cyber-lime animate-pulse" />
-                 <span className="text-xs tracking-widest uppercase">System Ready</span>
+                 <span className="text-xs tracking-widest uppercase glitch-text" data-text="SYSTEM READY">System Ready</span>
                </div>
             </div>
           </div>

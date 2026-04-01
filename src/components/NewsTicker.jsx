@@ -13,10 +13,10 @@ const newsItems = [
 
 const NewsTicker = () => {
   return (
-    <div className="relative z-20 w-full bg-cyber-lime/10 border-b border-cyber-lime/30 py-2 backdrop-blur-md">
+    <div className="relative z-20 w-full bg-cyber-lime/10 border-b border-cyber-lime/30 py-2 backdrop-blur-md scanline">
       <Marquee speed={50} gradient={false} className="overflow-hidden">
         {newsItems.map((news, index) => (
-          <span key={index} className="flex items-center text-cyber-lime text-sm font-mono mx-8">
+          <span key={index} className="flex items-center text-cyber-lime text-sm font-mono mx-8 drop-shadow-[0_0_8px_rgba(0,255,65,0.8)]">
             <Newspaper size={14} className="mr-2" />
             <span className="opacity-90">{news}</span>
             <span className="mx-8 opacity-50">///</span>

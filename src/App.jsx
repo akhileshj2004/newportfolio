@@ -8,6 +8,8 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Achievements from './components/Achievements';
 import Footer from './components/Footer';
+import CyberPenguin from './components/CyberPenguin';
+import LiquidCursor from './components/LiquidCursor';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -36,6 +38,8 @@ function App() {
         </main>
 
         <Footer />
+        <LiquidCursor />
+        {loaded && <CyberPenguin />}
       </div>
     </>
   );
