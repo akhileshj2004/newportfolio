@@ -44,7 +44,10 @@ const Footer = () => {
           </div>
 
           <a 
-            href="#" 
+            href="/resume.pdf"
+            download="Akhilesh_Joshi_Resume.pdf"
+            target="_blank"
+            rel="noreferrer"
             className="flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-cyber-lime/20 to-electric-blue/20 hover:from-cyber-lime/30 hover:to-electric-blue/30 border border-white/20 hover:border-white transition-all duration-300 rounded-md text-white font-mono text-sm neon-glow"
           >
             <Download className="w-4 h-4" />

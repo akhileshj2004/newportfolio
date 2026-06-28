@@ -102,7 +102,10 @@ const Hero = () => {
             </a>
 
             <a
-              href="#contact"
+              href="/resume.pdf"
+              download="Akhilesh_Joshi_Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
               className="flex items-center gap-2 bg-cyber-lime/10 border border-cyber-lime/30 hover:bg-cyber-lime/20 text-cyber-lime px-6 py-3 rounded-lg font-mono text-sm transition-all duration-300 neon-glow hover:scale-105"
             >
               <Download size={18} />
