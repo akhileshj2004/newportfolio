@@ -1,8 +1,31 @@
-import React from 'react';
-import { Mail, Phone, Download, Terminal } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Mail, Phone, Download, Terminal, Eye, FileDown } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
+  const [stats, setStats] = useState({ visits: '...', downloads: '...' });
+
+  useEffect(() => {
+    // Increment visits on load
+    fetch('https://api.counterapi.dev/v1/akhileshj2004-newportfolio/visits/up')
+      .then(res => res.json())
+      .then(data => setStats(s => ({ ...s, visits: data.count })))
+      .catch(() => setStats(s => ({ ...s, visits: 'N/A' })));
+
+    // Fetch current download count
+    fetch('https://api.counterapi.dev/v1/akhileshj2004-newportfolio/downloads')
+      .then(res => res.json())
+      .then(data => setStats(s => ({ ...s, downloads: data.count })))
+      .catch(() => setStats(s => ({ ...s, downloads: 'N/A' })));
+  }, []);
+
+  const handleDownload = () => {
+    fetch('https://api.counterapi.dev/v1/akhileshj2004-newportfolio/downloads/up')
+      .then(res => res.json())
+      .then(data => setStats(s => ({ ...s, downloads: data.count })))
+      .catch(console.error);
+  };
+
   return (
     <footer className="w-full bg-obsidian py-12 border-t border-white/10 mt-24 relative overflow-hidden" id="contact">
       <div className="absolute top-0 right-[20%] w-96 h-96 bg-electric-blue/5 blur-[100px] pointer-events-none"></div>
@@ -48,6 +71,7 @@ const Footer = () => {
             download="Akhilesh_Joshi_Resume.pdf"
             target="_blank"
             rel="noreferrer"
+            onClick={handleDownload}
             className="flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-cyber-lime/20 to-electric-blue/20 hover:from-cyber-lime/30 hover:to-electric-blue/30 border border-white/20 hover:border-white transition-all duration-300 rounded-md text-white font-mono text-sm neon-glow"
           >
             <Download className="w-4 h-4" />
@@ -57,8 +81,21 @@ const Footer = () => {
         
       </div>
 
-      <div className="container mx-auto px-6 max-w-7xl mt-12 pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs font-mono text-gray-600">
+      <div className="container mx-auto px-6 max-w-7xl mt-12 pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs font-mono text-gray-600 gap-4">
         <p>&copy; 2026. ALL RIGHTS RESERVED.</p>
+        
+        {/* Telemetry Stats */}
+        <div className="flex gap-6 items-center">
+          <div className="flex items-center gap-2 text-cyber-lime/70" title="Total Page Visits">
+            <Eye className="w-4 h-4" />
+            <span>VISITS: {stats.visits}</span>
+          </div>
+          <div className="flex items-center gap-2 text-electric-blue/70" title="Total Resume Downloads">
+            <FileDown className="w-4 h-4" />
+            <span>DOWNLOADS: {stats.downloads}</span>
+          </div>
+        </div>
+
         <p>SYSTEM_VERSION: 2.0.0_CYBERPUNK</p>
       </div>
     </footer>

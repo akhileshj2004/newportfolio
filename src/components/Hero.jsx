@@ -106,6 +106,9 @@ const Hero = () => {
               download="Akhilesh_Joshi_Resume.pdf"
               target="_blank"
               rel="noreferrer"
+              onClick={() => {
+                fetch('https://api.counterapi.dev/v1/akhileshj2004-newportfolio/downloads/up').catch(console.error);
+              }}
               className="flex items-center gap-2 bg-cyber-lime/10 border border-cyber-lime/30 hover:bg-cyber-lime/20 text-cyber-lime px-6 py-3 rounded-lg font-mono text-sm transition-all duration-300 neon-glow hover:scale-105"
             >
               <Download size={18} />
