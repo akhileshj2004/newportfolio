@@ -127,20 +127,20 @@ const Hero = () => {
           <div className="relative aspect-square w-full filter drop-shadow-[0_0_30px_rgba(0,180,255,0.2)]">
             {/* Radar Sweep Ring */}
             <div className="absolute inset-0 rounded-full border border-electric-blue/20 overflow-hidden">
-               <div className="absolute w-1/2 h-1/2 bottom-1/2 right-1/2 origin-bottom-right bg-gradient-to-tr from-electric-blue/0 via-electric-blue/10 to-electric-blue/40 animate-[spin_4s_linear_infinite]" />
+              <div className="absolute w-1/2 h-1/2 bottom-1/2 right-1/2 origin-bottom-right bg-gradient-to-tr from-electric-blue/0 via-electric-blue/10 to-electric-blue/40 animate-[spin_4s_linear_infinite]" />
             </div>
-            
+
             <div className="absolute inset-0 border-[3px] border-electric-blue/30 rounded-full animate-[spin_15s_linear_infinite] border-dashed"></div>
             <div className="absolute inset-4 border-2 border-cyber-lime/20 rounded-full animate-[spin_20s_linear_infinite_reverse]"></div>
-            
+
             {/* Scanning line across the circle */}
             <div className="absolute inset-8 rounded-full overflow-hidden border border-cyber-lime/10">
               <div className="absolute top-0 w-full h-[2px] bg-cyber-lime/40 shadow-[0_0_10px_rgba(0,255,65,1)] animate-[float_3s_ease-in-out_infinite]" />
             </div>
 
             <div className="absolute inset-12 bg-obsidian rounded-full border border-white/10 flex items-center justify-center z-10 shadow-[inset_0_0_40px_rgba(0,0,0,0.8)] hover:border-cyber-lime/50 transition-colors duration-500 overflow-hidden group">
-               <img src={userPhoto} alt="Akhilesh Joshi" className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" />
-               <div className="absolute inset-0 bg-cyber-lime/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay pointer-events-none"></div>
+              <img src={userPhoto} alt="Akhilesh Joshi" className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" />
+              <div className="absolute inset-0 bg-cyber-lime/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay pointer-events-none"></div>
             </div>
           </div>
         </motion.div>

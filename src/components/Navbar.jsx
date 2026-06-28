@@ -112,20 +112,23 @@ const Navbar = () => {
               transition={{ duration: 0.3, delay: 0.1 }}
               className="flex flex-col items-center gap-4"
             >
-              {navLinks.map((link, idx) => (
-                <motion.a
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.15 + idx * 0.05 }}
-                  className="flex items-center gap-3 text-lg font-mono text-gray-400 hover:text-cyber-lime transition-colors py-2"
-                >
-                  <span className="text-cyber-lime">{link.icon}</span>
-                  {link.label}
-                </motion.a>
-              ))}
+              {navLinks.map((link, idx) => {
+                const isActive = activeSection === link.href;
+                return (
+                  <motion.a
+                    key={link.label}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.15 + idx * 0.05 }}
+                    className={`flex items-center gap-3 text-lg font-mono transition-colors py-2 ${isActive ? 'text-cyber-lime shadow-[0_0_15px_rgba(0,255,65,0.2)] bg-cyber-lime/10 px-6 rounded-lg' : 'text-gray-400 hover:text-cyber-lime'}`}
+                  >
+                    <span className={isActive ? 'text-white' : 'text-cyber-lime'}>{link.icon}</span>
+                    {link.label}
+                  </motion.a>
+                );
+              })}
             </motion.div>
           </motion.div>
         )}

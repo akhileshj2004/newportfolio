@@ -5,10 +5,10 @@ import { Newspaper } from 'lucide-react';
 const Marquee = (MarqueeModule && typeof MarqueeModule !== 'function' && MarqueeModule.default) ? MarqueeModule.default : MarqueeModule;
 
 const newsItems = [
-  "New Publication: A Holistic Approach to Diabetes Management (SMARTCOM 2026 / Springer LNNS)",
-  "Research Update: RBI Compliance Assistant to be published in IJCACI 2025 / Springer LNNS",
-  "Recently Published: Classification of Watermelons based on Ripeness (ITAI 2025)",
-  "IEEE Xplore: Exploratory Data Analytics of COVID-19 Vaccination Drive in India (10847026)",
+  "Project Update: Federated Multi-Agent RAG System optimized for GTX 1650 (4GB VRAM)",
+  "Project Update: Graph-Based Route Planner System with A* and Prim's Algorithm",
+  "Project Update: Packet Vision - ML-powered DDoS detection system deployed live",
+  "Project Update: Interactive 3D Portfolio built with React, Framer Motion, and Tailwind CSS",
 ];
 
 const NewsTicker = () => {

@@ -19,6 +19,8 @@
     @apply bg-dark-charcoal text-gray-200 font-sans antialiased selection:bg-cyber-lime selection:text-black;
     background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
     background-size: 30px 30px;
+    scrollbar-width: thin;
+    scrollbar-color: #222 var(--color-dark-charcoal);
   }
   
   h1, h2, h3, h4, h5, h6 {

@@ -157,11 +157,19 @@ const Achievements = () => {
           {showExtras ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
         </button>
 
-        {showExtras && (
-          <div className="mt-8 space-y-8 animate-[fadeIn_0.5s_ease-out]">
-            
-            {/* Certifications */}
-            <div className="glass-panel p-6 bg-obsidian">
+        <AnimatePresence>
+          {showExtras && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              className="overflow-hidden"
+            >
+              <div className="mt-8 space-y-8">
+                
+                {/* Certifications */}
+                <div className="glass-panel p-6 bg-obsidian">
               <h4 className="text-lg font-mono text-purple-400 mb-5 border-b border-white/10 pb-2 flex items-center gap-2">
                 <BookOpen className="w-4 h-4" /> certs.txt
               </h4>
@@ -246,8 +254,10 @@ const Achievements = () => {
               </div>
             </div>
 
-          </div>
-        )}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
     </section>
   );

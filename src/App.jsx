@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import LoadingScreen from './components/LoadingScreen';
 import Navbar from './components/Navbar';
-import NewsTicker from './components/NewsTicker';
 import Hero from './components/Hero';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
@@ -9,6 +8,7 @@ import Skills from './components/Skills';
 import Achievements from './components/Achievements';
 import Footer from './components/Footer';
 import CyberPenguin from './components/CyberPenguin';
+import FloatingLines from './components/FloatingLines';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -19,6 +19,25 @@ function App() {
 
       <div className={`min-h-screen text-gray-300 relative selection:bg-cyber-lime selection:text-black font-sans transition-opacity duration-700 ${loaded ? 'opacity-100' : 'opacity-0'}`}>
         <div className="fixed inset-0 z-0 bg-dark-charcoal opacity-90 pointer-events-none" />
+
+        {/* Floating Lines Background */}
+        <div className="fixed inset-0 z-0 pointer-events-auto opacity-70">
+          <FloatingLines 
+            enabledWaves={["bottom","middle"]}
+            lineCount={7}
+            lineDistance={33.5}
+            bendRadius={29}
+            bendStrength={3}
+            interactive={true}
+            parallax={true}
+            animationSpeed={3.8}
+            gradientStart="#06B6D4"
+            gradientMid="#5c08eb"
+            gradientEnd="#2de2b4"
+            linesGradient={['#06B6D4', '#5c08eb', '#2de2b4']}
+          />
+        </div>
+
         <div className="fixed inset-0 z-0 bg-[radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[length:20px_20px] pointer-events-none" />
 
         {/* Cyberpunk ambient glows */}
@@ -26,7 +45,6 @@ function App() {
         <div className="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-electric-blue/10 blur-[120px] rounded-full pointer-events-none z-0" />
 
         <Navbar />
-        <NewsTicker />
 
         <main className="relative z-10 container mx-auto px-6 py-8 max-w-7xl flex flex-col gap-24">
           <Hero />
