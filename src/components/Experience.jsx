@@ -37,30 +37,6 @@ const publications = [
     fullDesc: "Comprehensive exploratory data analysis of India's COVID-19 vaccination campaign, analyzing distribution patterns, demographic coverage, and regional disparities.\n\nPublished in IEEE Xplore with data-driven insights for public health policy.",
     keywords: ["Data Analytics", "COVID-19", "Public Health", "IEEE", "Visualization"],
   },
-  {
-    title: "Zynq Optimized EEG Artifact Removal for Sleep Monitoring",
-    authorship: "First Author",
-    venue: "FTNCT'08 2025, to be published in Elsevier Journal",
-    icon: <Activity className="w-8 h-8 text-pink-400" />,
-    fullDesc: "Implements real-time EEG artifact removal on a Xilinx Zynq FPGA board for sleep monitoring applications.\n\nOptimizes signal processing algorithms for hardware deployment, enabling portable and efficient brain-computer interface systems.",
-    keywords: ["FPGA", "Zynq", "EEG", "Signal Processing", "Sleep Monitoring"],
-  },
-  {
-    title: "Dynamic Avatar Generation Framework",
-    authorship: "First Author",
-    venue: "In progress – to be submitted to ACM Transactions on Computing for Healthcare",
-    icon: <LayoutGrid className="w-8 h-8 text-cyan-400" />,
-    fullDesc: "Novel framework for generating dynamic, personalized avatars for healthcare applications.\n\nTargeting ACM Transactions on Computing for Healthcare, exploring AI-driven avatar generation for patient engagement and telemedicine interfaces.",
-    keywords: ["Avatar Generation", "Healthcare AI", "ACM", "Generative Models"],
-  },
-  {
-    title: "DeepDeflect: A Novel Dockerized Framework for Real‑Time DDoS Mitigation",
-    authorship: "First Author",
-    venue: "In progress",
-    icon: <Lock className="w-8 h-8 text-red-400" />,
-    fullDesc: "Designs a containerized deep learning framework for real-time DDoS attack detection and mitigation.\n\nLeverages Docker for scalable deployment and deep neural networks for intelligent traffic classification and threat response.",
-    keywords: ["DDoS Mitigation", "Docker", "Deep Learning", "Cybersecurity", "Real-time"],
-  }
 ];
 
 const cardVariants = {
@@ -104,7 +80,7 @@ const Experience = () => {
                 <h3 className="text-2xl font-mono text-cyber-lime glitch-hover inline-block">AI Intern</h3>
                 <p className="text-electric-blue text-lg font-sans">IIIT Dharwad</p>
               </div>
-              <span className="text-gray-500 font-mono text-sm border border-gray-700 px-3 py-1 rounded-full bg-dark-charcoal">Jan 2026 – Present</span>
+              <span className="text-gray-500 font-mono text-sm border border-gray-700 px-3 py-1 rounded-full bg-dark-charcoal">Jan 2026 – May 2026</span>
             </div>
             <p className="text-gray-300 font-sans leading-relaxed text-lg pt-2 md:max-w-3xl">
               Developing a <span className="text-white font-semibold">Retrieval‑Augmented Generation (RAG)</span> pipeline to enhance LLM responses using local knowledge bases. Integrating localized embeddings and semantic search vectors to significantly improve the accuracy and context-awareness of the pipeline over unstructured data sources.
