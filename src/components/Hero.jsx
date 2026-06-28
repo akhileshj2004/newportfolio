@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Terminal, Download } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import userPhoto from '../photo.jpg';
 
 const skills = [
   "Python", "C++", "AWS", "Docker", "LangChain", "PyTorch", "RAG pipelines"
@@ -131,12 +132,9 @@ const Hero = () => {
               <div className="absolute top-0 w-full h-[2px] bg-cyber-lime/40 shadow-[0_0_10px_rgba(0,255,65,1)] animate-[float_3s_ease-in-out_infinite]" />
             </div>
 
-            <div className="absolute inset-12 bg-obsidian rounded-full border border-white/10 flex items-center justify-center z-10 glass-panel shadow-[inset_0_0_40px_rgba(0,0,0,0.8)] hover:border-cyber-lime/50 transition-colors duration-500 overflow-hidden group">
-               <div className="absolute inset-0 bg-[radial-gradient(rgba(0,255,65,0.1)_1px,transparent_1px)] bg-[length:10px_10px] opacity-20" />
-               <div className="text-center font-mono opacity-50 flex flex-col items-center group-hover:opacity-100 transition-opacity">
-                 <Terminal className="w-12 h-12 mb-2 text-cyber-lime animate-pulse" />
-                 <span className="text-xs tracking-widest uppercase glitch-text" data-text="SYSTEM READY">System Ready</span>
-               </div>
+            <div className="absolute inset-12 bg-obsidian rounded-full border border-white/10 flex items-center justify-center z-10 shadow-[inset_0_0_40px_rgba(0,0,0,0.8)] hover:border-cyber-lime/50 transition-colors duration-500 overflow-hidden group">
+               <img src={userPhoto} alt="Akhilesh Joshi" className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500" />
+               <div className="absolute inset-0 bg-cyber-lime/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-overlay pointer-events-none"></div>
             </div>
           </div>
         </motion.div>
